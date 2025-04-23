@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Risen Events</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2" user-scalable="no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <title>Risen Events</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&amp;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://expomonk.com/newdemo/web/css/flaticon_xinterio.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="web/images/finallogo.png" type="image/png">
+
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="web/CSS/common.css">
+    <style type="text/css">
+        .close_icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            margin-bottom: 2rem;
+            cursor: pointer;
+        }
+
+        .menu_icon_main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: .4rem;
+        }
+
+        .menu_icon_main .line {
+            height: .17rem;
+            width: 3rem;
+            background-color: #fff;
+            border-radius: 1rem;
+        }
+
+        .footermenuu ul {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+        }
+
+        .footermenuu ul li a {
+            color: #373737;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        #mobileview {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: #ffffff8b;
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            z-index: 99999999999999999;
+            transition: .3s ease-in-out;
+        }
+
+        .section1,
+        .section2,
+        .section3 {
+            display: flex;
+            color: gray;
+            margin: 50px 100px;
+        }
+
+        .section1 h1,
+        .section2 h1,
+        .section3 h1 {
+            color: gray;
+        }
+
+        .left {
+            display: flex;
+            margin: 0 20px;
+        }
+
+        .subleftdiv {
+            margin-right: 20px;
+        }
+
+        .subleftdiv h4 {
+            font-size: x-large;
+        }
+
+        .subleftdiv hr {
+            width: 25px;
+            margin-bottom: 0;
+            border: 2px solid gray;
+        }
+
+        .subleftdiv h1 {
+            font-size: 80px;
+        }
+
+        .right {
+            margin: 0 20px;
+        }
+
+        .right hr {
+            margin: 20px 0;
+        }
+
+        .upcoming_events {
+            margin: 50px 100px;
+            align-items: center;
+        }
+
+        .upcoming_events_heading h2 {
+
+            font-weight: bold;
+            color: gray;
+            font-size: 40px;
+        }
+
+        .upcoming_events_heading hr {
+            width: 320px;
+            border: 2px solid gray;
+
+        }
+
+        .list_months {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            font-size: 2rem;
+
+        }
+
+        .list_months a {
+            padding: 10px 50px;
+            color: gray;
+        }
+
+        .list_months a:hover {
+            background-color: gray;
+            color: white;
+
+
+
+        }
+
+        #bannerdiv {
+            width: 100%;
+            height: auto;
+            background-image: url(web/images/bannernew.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .bannertext {
+            width: 100%;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: #ffffff;
+            opacity: 0.4;
+            padding: 200px 0;
+
+        }
+
+        .bannertext p,
+        h1 {
+            font-weight: bold;
+            color: #000000;
+
+        }
+
+        .bannertext h1 {
+            font-size: 80px;
+        }
+
+
+        @media (max-width:1368px) {
+
+            .section1,
+            .section2,
+            .section3 {
+                margin: 50px 50px;
+            }
+
+            .right h1 {
+                font-size: 30px;
+            }
+
+            .right h4 {
+                font-size: 20px;
+            }
+
+            .subleftdiv h1 {
+                font-size: 40px;
+            }
+
+            .subrightdiv img {
+                height: auto;
+            }
+
+            .upcoming_events {
+                margin: 50px 50px;
+            }
+
+        }
+
+        @media (max-width:767px) {
+
+            .section1,
+            .section2,
+            .section3 {
+                margin: 10px;
+                flex-direction: column;
+            }
+
+            .left {
+                margin: 0;
+            }
+
+            .subleftdiv h1 {
+                font-size: 80px;
+            }
+
+            .bannertext {
+                padding: 100px 0;
+            }
+
+            .bannertext h1 {
+                font-size: 40px;
+            }
+
+            .bannertext p {
+                padding: 0 20px;
+            }
+
+            .right {
+                text-align: center;
+                margin: 20px 0;
+            }
+        }
+
+        @media (max-width:516px) {
+            .left {
+                flex-direction: column;
+            }
+
+            .subleftdiv hr {
+                display: none;
+            }
+
+            .subleftdiv h4 {
+                margin-right: 20px;
+
+            }
+
+            .subleftdiv {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+            }
+
+            .bannertext p {
+                padding: 0 20px;
+            }
+
+            .right h1 {
+                font-size: 20px;
+            }
+
+            .right h4 {
+                font-size: 16px;
+            }
+
+            .list_months {
+                flex-direction: column;
+                font-size: 1rem;
+            }
+
+            .upcoming_events {
+                margin: 10px;
+            }
+
+            .upcoming_events_heading h2 {
+                font-size: 20px;
+            }
+
+            .upcoming_events_heading hr {
+                width: 160px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topheader">
+        <div class="container">
+            <div class="headerflexx" style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="logo" style="margin: 0;"><a href="index.html"><img src="web/images/final.png" width="100"
+                            alt="logoimg" style="width: 130px;"></a></div>
+
+                <div class="footermenu d-none d-lg-block" style="margin-bottom: 0;">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Feature</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Medea And News</a></li>
+                    </ul>
+                </div>
+
+                <div class="informationbg d-none d-lg-block">
+                    <div class="quotebtn"><a href="#">Get Free Quote</a></div>
+                </div>
+                <div class="menu_icon d-block d-lg-none">
+                    <div class="menu_icon_main">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </div><!--header-->
+
+    <!-- mobile menu -->
+
+    <!-- mobile menu -->
+
+    <div id="mobileview">
+        <div class="container">
+            <div class="close_icon"><i class="bi bi-x"></i></div>
+            <div class="footermenuu" style="margin-bottom: 0; z-index: 9999;">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Feature</a></li>
+                    <li><a href="">Career</a></li>
+                    <li><a href="">Medea And News</a></li>
+                </ul>
+            </div>
+            <div class="informationbg" style="display: block;">
+                <div class="quotebtn"><a href="#">Get Free Quote</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="bannerdiv">
+        <div class="bannertext">
+            <h1>EVENTS</h1>
+            <p>Risen seeks to actively engage our community with fellowship and love.</p>
+            <p>Below you will find a list of upcoming events that you can attend, volunteer and share with others.</p>
+        </div>
+    </div>
+    <!-- banner1 -->
+
+    <div class="upcoming_events">
+
+        <div class="upcoming_events_heading">
+            <h2>Upcoming Events</h2>
+            <hr>
+        </div>
+        <div class="list_months">
+            <a href="#">List</a>
+            <a href="#">Months</a>
+        </div>
+    </div>
+    <hr>
+
+    <div class="section1">
+
+        <div class="left">
+            <div class="subleftdiv">
+                <h4>JUN</h4>
+                <hr>
+                <h1>23</h1>
+            </div>
+            <div class="subrightdiv">
+                <img src="web/Images/bannernew.jpg" alt="">
+            </div>
+        </div>
+        <div class="right">
+
+            <h1>Title of risen Events</h1>
+            <h4>1015 California Ave, Los Angeles CA</h4>
+            <h4>7:00 pm <i class="fa-solid fa-minus"></i> 8:00 pm</h4>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet illo vitae facere dignissimos
+                voluptates accusantium officia dolore cumque aliquam magnam.</p>
+            <hr>
+            <h4>View Event Details</h4>
+
+
+        </div>
+    </div>
+    <hr>
+
+    <div class="section2">
+
+        <div class="left">
+            <div class="subleftdiv">
+                <h4>JUN</h4>
+                <hr>
+                <h1>23</h1>
+            </div>
+            <div class="subrightdiv">
+                <img src="web/Images/bannernew.jpg" alt="">
+            </div>
+        </div>
+        <div class="right">
+            <div class="upperdiv">
+                <h1>Title of risen Events</h1>
+                <h4>1015 California Ave, Los Angeles CA</h4>
+                <h4>7:00 pm <i class="fa-solid fa-minus"></i> 8:00 pm</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet illo vitae facere dignissimos
+                    voluptates accusantium officia dolore cumque aliquam magnam.</p>
+                <hr>
+                <h4>View Event Details</h4>
+            </div>
+            <div class="lowerdiv"></div>
+        </div>
+    </div>
+    <hr>
+
+    <div class="section3">
+
+        <div class="left">
+            <div class="subleftdiv">
+                <h4>JUN</h4>
+                <hr>
+                <h1>23</h1>
+            </div>
+            <div class="subrightdiv">
+                <img src="web/Images/bannernew.jpg" alt="">
+            </div>
+        </div>
+        <div class="right">
+            <div class="upperdiv">
+                <h1>Title of risen Events</h1>
+                <h4>1015 California Ave, Los Angeles CA</h4>
+                <h4>7:00 pm <i class="fa-solid fa-minus"></i> 8:00 pm</h4>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet illo vitae facere dignissimos
+                    voluptates accusantium officia dolore cumque aliquam magnam.</p>
+                <hr>
+                <h4>View Event Details</h4>
+            </div>
+            <div class="lowerdiv"></div>
+        </div>
+    </div>
+    <hr>
+
+
+
+
+    <footer>
+        <div class="footer">
+            <div class="container">
+                <div class="footermenu">
+                    <ul>
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Feature</a></li>
+                        <li><a href="">Career</a></li>
+                        <li><a href="">Medea And News</a></li>
+                    </ul>
+                </div>
+                <div class="footerlog"><img src="web/images/final.png" width="100" alt="" style="width: 130px;"></div>
+                <div class="footertop">
+                    <div class="inneer">
+                        <div class="content">
+                            <div class="toptitle">Are you an exhibition stand builder?</div>
+                            <p>List your company on our portal and expand your business.</p>
+                        </div>
+                        <div class="footerquotebtn"><a href="#">Get Quotation</a></div>
+                    </div>
+                </div>
+
+
+                <div class="footerbottom">
+                    <h2 class="bottitle">HELP & SUPPORT</h2>
+                    <div class="bottommenu">
+                        <ul>
+                            <li><a href="return-policy.html">Refund Policy</a></li>
+                            <li><a href="terms-and-condition.html">Terms and Conditions</a></li>
+                            <li><a href="mailto:enquiry@expostandzone.com"><i class="fa fa-envelope"></i>
+                                    enquiry@expomonk.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="copyright">Copyright © 2025 <a href="index.html">Expo Monk Pvt. Ltd.</a> <a
+                            href="privacy-policy.html">Privacy Policy</a></div>
+                    <div class="footersocial">
+                        <ul>
+                            <li><a href="#" rel="nofollow" target="_blank"> <img src="web/images/linkedin.png"
+                                        alt="linkedin" width="32" height="32"></a></li>
+                            <li><a href="#" rel="nofollow" target="_blank"> <img src="web/images/twitter2.png"
+                                        alt="twitter" width="32" height="32"></a></li>
+                            <li><a href="#" rel="nofollow" target="_blank"> <img src="web/images/fb.png" alt="facebook"
+                                        width="32" height="32"></a></li>
+                            <li><a href="#" rel="nofollow" target="_blank"> <img src="web/images/ig.webp"
+                                        alt="instagram" width="32" height="32"></a></li>
+                            <li><a href="#" rel="nofollow" target="_blank"> <img src="web/images/pin.webp"
+                                        alt="pinterest" width="32" height="32"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer><!--footer-->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const iconMenu = document.querySelector('.menu_icon');
+            const iconClose = document.querySelector('.close_icon');
+            const mobileView = document.querySelector('#mobileview');
+
+            // Open mobile view
+            iconMenu.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent event bubbling to window
+                mobileView.style.right = '0';
+            });
+
+            // Close mobile view
+            iconClose.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileView.style.right = '-100%';
+            });
+
+            // Hide mobile view on outside click
+            window.addEventListener('click', (e) => {
+                if (
+                    mobileView.style.right === '0px' &&
+                    !mobileView.contains(e.target) &&
+                    !iconMenu.contains(e.target)
+                ) {
+                    mobileView.style.right = '-100%';
+                }
+            });
+
+            // Hide on window resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 992) {
+                    mobileView.style.right = '-100%';
+                }
+            });
+        });
+    </script>
+
+    <script>
+
+
+    </script>
+</body>
+
+</html>
