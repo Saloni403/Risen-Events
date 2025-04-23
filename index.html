@@ -16,7 +16,9 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" type="text/css" href="https://expomonk.com/newdemo/web/css/flaticon_xinterio.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Favicon -->
     <link rel="icon" href="web/images/finallogo.png" type="image/png">
 
@@ -24,6 +26,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="web/CSS/common.css">
+    <link rel="stylesheet" href="web/CSS/home.css">
     <style type="text/css">
         .close_icon {
             width: 50px;
@@ -87,14 +90,7 @@
         .section2,
         .section3 {
             display: flex;
-            color: gray;
             margin: 50px 100px;
-        }
-
-        .section1 h1,
-        .section2 h1,
-        .section3 h1 {
-            color: gray;
         }
 
         .left {
@@ -106,18 +102,20 @@
             margin-right: 20px;
         }
 
-        .subleftdiv h4 {
-            font-size: x-large;
+        .subleftdiv h4,
+        .right h4 {
+            font-size: 34px;
         }
 
         .subleftdiv hr {
             width: 25px;
             margin-bottom: 0;
-            border: 2px solid gray;
+            border: 2px solid black;
         }
 
-        .subleftdiv h1 {
-            font-size: 80px;
+        .subleftdiv h1,
+        .right h1 {
+            font-size: 50px;
         }
 
         .right {
@@ -130,154 +128,56 @@
 
         .upcoming_events {
             margin: 50px 100px;
-            align-items: center;
-        }
-
-        .upcoming_events_heading h2 {
-
-            font-weight: bold;
-            color: gray;
-            font-size: 40px;
         }
 
         .upcoming_events_heading hr {
+            border: 2px solid black;
             width: 320px;
-            border: 2px solid gray;
-
-        }
-
-        .list_months {
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            font-size: 2rem;
-
-        }
-
-        .list_months a {
-            padding: 10px 50px;
-            color: gray;
-        }
-
-        .list_months a:hover {
-            background-color: gray;
-            color: white;
-
-
-
-        }
-
-        #bannerdiv {
-            width: 100%;
-            height: auto;
-            background-image: url(web/images/bannernew.jpg);
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-
-        .bannertext {
-            width: 100%;
-            height: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            background-color: #ffffff;
-            opacity: 0.4;
-            padding: 200px 0;
-
-        }
-
-        .bannertext p,
-        h1 {
-            font-weight: bold;
-            color: #000000;
-
-        }
-
-        .bannertext h1 {
-            font-size: 80px;
+            margin: 0 auto 1.5rem auto;
         }
 
 
-        @media (max-width:1368px) {
+
+
+        @media (max-width:1024px) {
 
             .section1,
             .section2,
-            .section3 {
-                margin: 50px 50px;
-            }
-
-            .right h1 {
-                font-size: 30px;
-            }
-
-            .right h4 {
-                font-size: 20px;
-            }
-
-            .subleftdiv h1 {
-                font-size: 40px;
+            .section3,
+            .upcoming_events {
+                margin: 20px;
             }
 
             .subrightdiv img {
                 height: auto;
             }
 
-            .upcoming_events {
-                margin: 50px 50px;
+            .subleftdiv h4,
+            .right h4 {
+                font-size: 1.4rem;
+            }
+
+            .subleftdiv h1,
+            .right h1 {
+                font-size: 34px;
             }
 
         }
 
-        @media (max-width:767px) {
 
+
+
+        @media (max-width:768px) {
             .section1,
             .section2,
-            .section3 {
-                margin: 10px;
-                flex-direction: column;
-            }
-
-            .left {
-                margin: 0;
-            }
-
-            .subleftdiv h1 {
-                font-size: 80px;
-            }
-
-            .bannertext {
-                padding: 100px 0;
-            }
-
-            .bannertext h1 {
-                font-size: 40px;
-            }
-
-            .bannertext p {
-                padding: 0 20px;
-            }
-
-            .right {
-                text-align: center;
-                margin: 20px 0;
-            }
-        }
-
-        @media (max-width:516px) {
+            .section3,
+            .upcoming_events,
             .left {
                 flex-direction: column;
             }
 
             .subleftdiv hr {
                 display: none;
-            }
-
-            .subleftdiv h4 {
-                margin-right: 20px;
-
             }
 
             .subleftdiv {
@@ -287,34 +187,41 @@
                 margin: 0;
             }
 
-            .bannertext p {
-                padding: 0 20px;
+            .subleftdiv h1,
+            .subleftdiv h4 {
+                margin: 0 10px;
             }
 
-            .right h1 {
-                font-size: 20px;
+            .right {
+                text-align: center;
+                margin-top: 20px;
             }
 
+            .right hr {
+                margin: 10px 0;
+            }
+
+            .left {
+                margin: 0;
+            }
+        }
+
+        @media (max-width:425px) {
+
+            .subleftdiv h4,
             .right h4 {
-                font-size: 16px;
+                font-size: 18px;
             }
 
-            .list_months {
-                flex-direction: column;
-                font-size: 1rem;
-            }
-
-            .upcoming_events {
-                margin: 10px;
-            }
-
-            .upcoming_events_heading h2 {
-                font-size: 20px;
+            .subleftdiv h1,
+            .right h1 {
+                font-size: 1.6rem;
             }
 
             .upcoming_events_heading hr {
                 width: 160px;
             }
+
         }
     </style>
 </head>
@@ -373,30 +280,33 @@
         </div>
     </div>
 
-    <div id="bannerdiv">
-        <div class="bannertext">
-            <h1>EVENTS</h1>
-            <p>Risen seeks to actively engage our community with fellowship and love.</p>
-            <p>Below you will find a list of upcoming events that you can attend, volunteer and share with others.</p>
+    <section>
+        <div class="bannerbg">
+            <div class="container">
+                <div class="widthsmall">
+                    <h1 class="maintitle" style="line-height: 55px;">EVENTS</h1>
+                    <p>Risen seeks to actively engage our community with fellowship and love.</p>
+                    <p>Below you will find a list of upcoming events that you can attend, volunteer and share with
+                        others.</p>
+                </div>
+            </div>
         </div>
-    </div>
-    <!-- banner1 -->
+    </section><!-- banner -->
 
     <div class="upcoming_events">
-
         <div class="upcoming_events_heading">
-            <h2>Upcoming Events</h2>
+            <h2 class="maintitle">Upcoming Events</h2>
             <hr>
         </div>
-        <div class="list_months">
-            <a href="#">List</a>
-            <a href="#">Months</a>
+        <div class="fieldwrap">
+            <div class="connectnow">
+                <a href="#">List</a>
+                <a href="#">Months</a>
+            </div>
         </div>
-    </div>
-    <hr>
+    </div><hr>
 
     <div class="section1">
-
         <div class="left">
             <div class="subleftdiv">
                 <h4>JUN</h4>
@@ -408,22 +318,19 @@
             </div>
         </div>
         <div class="right">
-
             <h1>Title of risen Events</h1>
             <h4>1015 California Ave, Los Angeles CA</h4>
             <h4>7:00 pm <i class="fa-solid fa-minus"></i> 8:00 pm</h4>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet illo vitae facere dignissimos
                 voluptates accusantium officia dolore cumque aliquam magnam.</p>
             <hr>
-            <h4>View Event Details</h4>
-
-
+            <h4>View Event Details &nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></h4>
         </div>
-    </div>
-    <hr>
+    </div> <hr>
+   
+
 
     <div class="section2">
-
         <div class="left">
             <div class="subleftdiv">
                 <h4>JUN</h4>
@@ -442,7 +349,7 @@
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet illo vitae facere dignissimos
                     voluptates accusantium officia dolore cumque aliquam magnam.</p>
                 <hr>
-                <h4>View Event Details</h4>
+                <h4>View Event Details &nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></h4>
             </div>
             <div class="lowerdiv"></div>
         </div>
@@ -450,7 +357,6 @@
     <hr>
 
     <div class="section3">
-
         <div class="left">
             <div class="subleftdiv">
                 <h4>JUN</h4>
@@ -469,7 +375,7 @@
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet illo vitae facere dignissimos
                     voluptates accusantium officia dolore cumque aliquam magnam.</p>
                 <hr>
-                <h4>View Event Details</h4>
+                <h4>View Event Details &nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></h4>
             </div>
             <div class="lowerdiv"></div>
         </div>

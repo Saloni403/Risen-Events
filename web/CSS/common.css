@@ -315,6 +315,13 @@ a:hover {
     margin-right: 7px;
 }
 
+.widthsmall{
+    display: block;
+    width: 767px;
+    max-width: 100%;
+    position: relative;
+    margin:0 auto;
+}
 
 .copyright {
     display: block;
@@ -354,4 +361,23 @@ a:hover {
 .footersocial ul li a img {
     border-radius: 50%;
 }
+.widthmedium::after,
+.widthsmall::after,
+.shrtdesc::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.maintitle{
+    display: block;
+    text-align: center;
+    color: #222222;
+    font-size: 34px;
+    font-weight: 600;
+    text-transform: capitalize;
+    line-height: 55px;
+    letter-spacing: 0px;
+}
+
+
 
